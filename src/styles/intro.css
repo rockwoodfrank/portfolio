@@ -1,0 +1,7 @@
+#intro {
+    position: relative;
+    background-color: white;
+    z-index: 200;
+    padding: 3em;
+}
+

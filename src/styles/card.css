@@ -1,0 +1,30 @@
+#card-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#card {
+    width: 40vh;
+    margin-top: 15vh;
+    z-index: 0;
+}
+
+#card-front {
+    padding: 2em;
+}
+
+#card-front h1 {
+    font-size: 2.5em;
+}
+
+#card-front h2 {
+    font-size: 1.5em;
+}
+
+#card-back {
+    padding: 1em;
+}

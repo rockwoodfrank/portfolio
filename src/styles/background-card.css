@@ -1,0 +1,18 @@
+
+#center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+#background-card {
+    width: 40vh;
+    height: 70vh;
+    background-color: white;
+}
