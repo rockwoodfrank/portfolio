@@ -28,14 +28,14 @@ export default function Card()
     return (
         <div id="card-container">
             <section id="card" >
-                <div id="card-front" style={{"display": scrollY < 500 ? "block" : "none"}}>
+                <div id="card-front" style={{"display": scrollY < 500 ? "block" : "none", opacity: (100 - (scrollY * 0.7) + "%")}} data-aos="fade-up">
                     <h1 className="eb-garamond-bold">ROCKWOOD FRANK</h1>
                     <h2 className="eb-garamond-bold">Recent Computer Engineering Graduate</h2>
                     <LanderLink text={"CONTACT\n@ROCKWOODFRANK.COM"} link={""}/>
                     <LanderLink text={"GITHUB"} link={""}/>
                     <LanderLink text={"LINKEDIN"} link={""}/>
                 </div>
-                <div id="card-back" style={{"display": scrollY >= 500 ? "block" : "none"}}>
+                <div id="card-back" style={{"display": scrollY >= 500 ? "block" : "none", opacity: ((scrollY-500) * 1.3) + "%"}} data-aos="fade-up">
                     <Position image={calpolylogo} title={"Cal Poly SLO"} texts={["Class of 2026", "Computer Engineering, B.S."]}/>
                     <Position image={caltranslogo} title={"Caltrans District 5"} texts={["Intelligent Transportation Services", "Software Engineering Intern"]}/>
                     <div>

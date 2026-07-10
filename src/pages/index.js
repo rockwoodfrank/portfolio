@@ -4,6 +4,10 @@ import BackgroundCard from "../components/background-card";
 import Card from "../components/card";
 import Intro from "../components/intro";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
+
 const pageStyles = {
     background: "linear-gradient(45deg, #0c3263, #000f23)",
     fontFamily: "-apple-system, Roboto, sans-serif, serif",

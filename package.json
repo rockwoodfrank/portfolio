@@ -10,17 +10,22 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages -r https://github.com/rockwoodfrank/portfolio.git"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
+    "aos": "^3.0.0-beta.6",
     "gatsby": "^5.14.6",
     "gatsby-plugin-mdx": "^5.16.0",
     "gatsby-plugin-sitemap": "^6.16.0",
     "gatsby-source-filesystem": "^5.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
