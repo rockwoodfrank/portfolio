@@ -3,10 +3,7 @@ import "../styles/global.css";
 import BackgroundCard from "../components/background-card";
 import Card from "../components/card";
 import Intro from "../components/intro";
-
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-AOS.init();
+import { useEffect } from "react";
 
 const pageStyles = {
     background: "linear-gradient(45deg, #0c3263, #000f23)",
@@ -15,13 +12,27 @@ const pageStyles = {
 }
 
 const IndexPage = () => {
-  return (
-    <main style={pageStyles}>
-        <BackgroundCard />
-        <Card />
-        <Intro />
-    </main>
-  )
+    useEffect(() => {
+        const initAOS = async () => {
+            const AOS = await import("aos");
+            await import("aos/dist/aos.css");
+
+            AOS.default.init({
+                duration: 800,
+                once: true,
+            });
+        };
+
+        initAOS();
+    }, []);
+
+    return (
+        <main style={pageStyles}>
+            <BackgroundCard />
+            <Card />
+            <Intro />
+        </main>
+    )
 }
 
 export default IndexPage

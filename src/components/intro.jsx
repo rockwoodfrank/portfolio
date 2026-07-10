@@ -11,7 +11,7 @@ export default function Intro()
             <div className="posts-container" data-aos="fade-up">
                 <PostPreview 
                     title={"Undergraduate Thesis: Digital Laser Control Systems For Neutral Atom Trapping"} 
-                    link={""}
+                    link={"https://github.com/rockwoodfrank/portfolio/blob/main/media/thesis.pdf"}
                 />
             </div>
         </div>
