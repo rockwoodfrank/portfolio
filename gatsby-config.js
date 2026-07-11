@@ -14,5 +14,4 @@ module.exports = {
     },
     __key: "pages"
   }],
-  pathPrefix: "/portfolio",
 };
