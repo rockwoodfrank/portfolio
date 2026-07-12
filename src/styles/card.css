@@ -16,7 +16,6 @@
 
 #card-front {
     padding: 5vh 5vw;
-    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -32,7 +31,8 @@
 }
 
 #card-back {
-    padding: 1em;
+    padding: 5vh 5vw;
+    height: 60vh;
 }
 
 #card-back h2 {

@@ -8,7 +8,7 @@ import { useEffect } from "react";
 const pageStyles = {
     background: "linear-gradient(45deg, #0c3263, #000f23)",
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
-    paddingTop: "300vh",
+    paddingTop: "220vh",
 }
 
 const IndexPage = () => {
