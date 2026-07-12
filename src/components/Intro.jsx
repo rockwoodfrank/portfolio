@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/intro.css"
 import '../styles/fonts.css'
-import PostPreview from "./post-preview";
+import PostPreview from "./PostPreview";
 
 export default function Intro()
 {

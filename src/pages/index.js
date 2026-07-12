@@ -1,8 +1,8 @@
 import * as React from "react"
 import "../styles/global.css";
-import BackgroundCard from "../components/background-card";
-import Card from "../components/card";
-import Intro from "../components/intro";
+import BackgroundCard from "../components/BackgroundCard";
+import Card from "../components/Card";
+import Intro from "../components/Intro";
 import { useEffect } from "react";
 
 const pageStyles = {

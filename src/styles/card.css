@@ -9,12 +9,17 @@
 
 #card {
     width: 40vh;
+    height: 70vh;
     margin-top: 15vh;
     z-index: 0;
 }
 
 #card-front {
-    padding: 2em;
+    padding: 5vh 5vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #card-front h1 {
@@ -23,8 +28,13 @@
 
 #card-front h2 {
     font-size: 1.5em;
+    margin: 0;
 }
 
 #card-back {
     padding: 1em;
+}
+
+#card-back h2 {
+    margin: 0;
 }

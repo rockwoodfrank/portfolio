@@ -1,0 +1,10 @@
+.toscroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toscroll p {
+    margin: 0;
+    color: #003cac;
+}

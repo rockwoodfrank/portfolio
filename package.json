@@ -23,7 +23,8 @@
     "gatsby-plugin-sitemap": "^6.16.0",
     "gatsby-source-filesystem": "^5.16.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-scroll": "^1.9.3"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
