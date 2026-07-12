@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `http://www.rockwoodfrank.com`
   },
   plugins: ["gatsby-plugin-sitemap", "gatsby-plugin-mdx", {
     resolve: 'gatsby-source-filesystem',
