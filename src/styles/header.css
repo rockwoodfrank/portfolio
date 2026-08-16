@@ -1,0 +1,10 @@
+a {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}

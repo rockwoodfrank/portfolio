@@ -1,0 +1,60 @@
+---
+title: "Vision-Based Robotic Arm Controller"
+date: "2025-12-7"
+tags: ["Robotic Manipulation", "openCV", "Denavit-Hartenburg", "3d Transformations", "Python", "PID controls"] 
+repository: "https://github.com/rockwoodfrank/robot-arm-project"
+---
+
+import MdxLayout from "../components/mdx-layout"
+import ReactPlayer from 'react-player'
+import YoutubeVideo from '../components/YoutubeVideo.jsx'
+import flowchart from '../../media/robotarm/robotarm-flowchart.png'
+import imageDetection from '../../media/robotarm/image-detection.png'
+import calibration from '../../media/robotarm/calibration.png'
+import calibrationView from '../../media/robotarm/calibration-view.png'
+import sortrun2 from '../../media/robotarm/sortrun2.png'
+import sortrun4 from '../../media/robotarm/sortrun4.png'
+import translation from '../../media/robotarm/translation.png'
+
+
+export default MdxLayout
+
+export function Head() {
+  return <title>Robot Arm Sorting Project | Your Site Name</title>
+}
+
+Using a multi-step pipeline, the codebase that we developed 
+detects target objects with a stationary camera and OpenCV 
+processing, matrix translation developed with the Denavit Hartenburg convention, 
+velocity-based trajectory planning, and a custom PID controller. The result is a controller 
+for the 4 degree-of-freedom OpenManipulatorX robotic arm that allows for identification and manipulation 
+of real world objects.
+
+## Video Demo
+<YoutubeVideo 
+    link={"https://www.youtube.com/embed/uuB1_pNdi2o?si=G6LrDdMnMHhDBu5k"}
+    orientation = "vertical"
+/>
+
+This is a demo of the complete pipeline. The mounted camera sends frames to the program, which uses OpenCV
+to detect and locate target objects within the robot's workspace. The flowchart for the system is shown here:
+
+<img src={flowchart} alt="Computer Vision Flowchart" />
+
+<img src={imageDetection} alt="Computer Vision Flowchart" />
+
+<img src={calibration} alt="Computer Vision Flowchart" />
+
+<img src={calibrationView} alt="Computer Vision Flowchart" />
+
+<img src={sortrun2} alt="Computer Vision Flowchart" />
+
+<img src={sortrun4} alt="Computer Vision Flowchart" />
+
+<img src={translation} alt="Computer Vision Flowchart" />
+
+
+<YoutubeVideo 
+    link={"https://www.youtube.com/embed/ageWvwkNFlc?si=bBK6AqE_dIxTx4xO"}
+    orientation = "vertical"
+/>

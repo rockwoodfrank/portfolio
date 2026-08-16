@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0 30px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.post-banner {
+    height: 40vh;
+    object-fit: cover;
+}
+
