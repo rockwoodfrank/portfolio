@@ -6,9 +6,6 @@ const headerStyle = {
     display: "grid",
     gridTemplateColumns: "auto 20px 20vw",
     backgroundColor: "white",
-    position: "fixed",
-    top: "0",
-    width: "100%",
 }
 
 const headerSections = [
