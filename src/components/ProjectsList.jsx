@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PostPreview from "../components/PostPreview";
-import robotarm from "../../media/robotarm/robotarm.jpg"
 
 const projectsListStyle = {
     width: "100%",
@@ -10,7 +9,7 @@ const projectsListStyle = {
     justifyContent: "space-around",
 }
 
-export default function ProjectsList({})
+export default function ProjectsList()
 {
     // Access all mdx posts to get information
     const data = useStaticQuery(graphql`
@@ -52,7 +51,7 @@ export default function ProjectsList({})
         <div id = "projects-list" style={projectsListStyle}>
         {posts.map(post => {
             // Find the image
-            let coverImage = images.find(image => post.frontmatter.cover == image.relativePath)
+            let coverImage = images.find(image => post.frontmatter.cover === image.relativePath)
             
             return (
             <PostPreview 

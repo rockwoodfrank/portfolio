@@ -27,7 +27,7 @@ const titleStyle = {
     fontWeight: "bold",
 }
 
-export default function Header({})
+export default function Header()
 {
     return (
         <header style={headerStyle}>

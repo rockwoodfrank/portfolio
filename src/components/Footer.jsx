@@ -6,7 +6,7 @@ const footerStyle = {
     fontSize: "15px",
 }
 
-export default function Footer({})
+export default function Footer()
 {
     return (
         <footer style={footerStyle}>

@@ -2,7 +2,6 @@
 import * as React from "react"
 
 import "../styles/layout.css"
-import { graphql } from "gatsby"
 import Footer from "./Footer";
 import Header from "./Header";
 
