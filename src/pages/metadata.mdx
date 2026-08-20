@@ -8,8 +8,17 @@ repository: "https://github.com/iotapi/iotapi.github.io"
 ---
 
 import MdxLayout from "../components/mdx-layout"
+import coverImage from "../../media/metadata/metadata.png"
 
-export default MdxLayout
+export default function Layout(props) {
+  return <MdxLayout {...props} coverImage={coverImage} />
+}
+
+export function Head() {
+  return <title>Metadata Collection Interaface | Rockwood Frank</title>
+}
+
+import demo from "../../media/metadata/demo.gif"
 
 Originally developed to remove third-party dependencies, my codebase
 constantly collects live data from CCTV cameras located across the district.
@@ -21,20 +30,6 @@ data from two cameras at the same intersection, and combining their data to get 
 record of traffic behavior. This technology is being implemented across the district,
 with the intention to use this data to make safer intersections for all.
 
-## Problem Statement
-Many solutions exist on the market for gathering traffic usage information that integrate
-computer vision to determine object type and obtain more accurate movement patterns.
-The issue with many of these solutions, however, is that the data collected is stored
-on vendor servers, and requires a monthly fee for access to the data, usually per location.
-
-Two main issues arise with these solutions. First, the data access fee is a recurring
-expense which grows larger for each site set up. Second, storing the data on a vendor
-server about traffic patterns of public roads raises ethical concerns. As long as the
-data is being exported externally, there is no guarantee that all data will remain
-uncompromised.
-
-My goal with this project was to:
-1. Determine if it was possible to access the stream from the camera, and
-2. Design a system to collect, parse, and display that data.
+<img src={demo} alt="MDemo of Live Map" />
 
 

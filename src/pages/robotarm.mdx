@@ -19,7 +19,11 @@ import sortrun4 from '../../media/robotarm/sortrun4.png'
 import translation from '../../media/robotarm/translation.png'
 
 
-export default MdxLayout
+import coverImage from "../../media/robotarm/robotarm.jpg"
+
+export default function Layout(props) {
+  return <MdxLayout {...props} coverImage={coverImage} />
+}
 
 export function Head() {
   return <title>Vision-Based Robotic Arm Controller | Rockwood Frank</title>
