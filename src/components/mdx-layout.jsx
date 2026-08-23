@@ -11,12 +11,15 @@ export default function MdxLayout({ children, pageContext, coverImage }) {
     return (
     <>
         <Header />
-        <main>
-            <div id="container">
-                <img src={coverImage} alt="" className="post-banner"/>
-                <h1>{pageContext.frontmatter.title}</h1>
-                <p><strong>Date of Project Completion:</strong> {pageContext.frontmatter.date}</p>
-                <p></p>
+        <main className="flex justify-center">
+            <div id="container" className="max-w-250 mx-10">
+                {/* Title */}
+                <div>
+                    <img src={coverImage} alt="" className="post-banner w-full"/>
+                    <h1 className="py-2">{pageContext.frontmatter.title}</h1>
+                    <p><strong>Date of Project Completion:</strong> {pageContext.frontmatter.date}</p>
+                    <p></p>
+                </div>
                 {children}
             </div>
         </main>

@@ -1,39 +1,17 @@
 import React from "react"
-import "../styles/header.css"
-
-const headerStyle = {
-    display: "grid",
-    gridTemplateColumns: "auto 20px 20vw",
-    backgroundColor: "white",
-}
-
-const headerSections = [
-    {
-        padding: "20px 40px",
-        color: "white",
-        // fontWeight: "bold",
-        // fontSize: "24px"
-    },
-    {
-        padding: "10px",
-    }
-]
-
-const titleStyle = {
-    fontSize: "28px",
-    fontWeight: "bold",
-}
 
 export default function Header()
 {
     return (
-        <header style={headerStyle}>
-            <div style={headerSections[0]} className="bg-cyan-900">
-                <a style={titleStyle} href="/">Rockwood Frank</a>
-            </div>
-            {/* Whitespace */}
-            <div></div>
-            <div style={headerSections[1]} className="bg-amber-600"></div>
-        </header>
+        <>
+            <header className="flex justify-center bg-cyan-900 h-20">
+                <div className="w-full max-w-250 mx-10 flex items-center">
+                    <a className="font-bold text-3xl text-white" href="/">Rockwood Frank</a>
+                </div>
+                <div className="absolute top-0 right-0 w-40 h-20 bg-amber-600 border-l-25 border-white"/>
+            </header>
+            
+        </>
+   
     )
 }
