@@ -1,5 +1,4 @@
 import React from "react"
-import { colors } from "../standards"
 import "../styles/header.css"
 
 const headerStyle = {
@@ -10,14 +9,12 @@ const headerStyle = {
 
 const headerSections = [
     {
-        backgroundColor: colors.primary,
         padding: "20px 40px",
         color: "white",
         // fontWeight: "bold",
         // fontSize: "24px"
     },
     {
-        backgroundColor: colors.secondary,
         padding: "10px",
     }
 ]
@@ -31,12 +28,12 @@ export default function Header()
 {
     return (
         <header style={headerStyle}>
-            <div style={headerSections[0]}>
+            <div style={headerSections[0]} className="bg-cyan-900">
                 <a style={titleStyle} href="/">Rockwood Frank</a>
             </div>
             {/* Whitespace */}
             <div></div>
-            <div style={headerSections[1]}></div>
+            <div style={headerSections[1]} className="bg-amber-600"></div>
         </header>
     )
 }

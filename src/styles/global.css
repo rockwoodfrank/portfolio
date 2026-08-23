@@ -1,3 +1,12 @@
-body {
-    margin: 0;
+@import "tailwindcss";
+
+@layer base {
+  h1 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-bold);
+  }
+  h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+  }
 }

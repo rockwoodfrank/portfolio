@@ -2,13 +2,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import PostPreview from "../components/PostPreview";
 
-const projectsListStyle = {
-    width: "100%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-}
-
 export default function ProjectsList()
 {
     // Access all mdx posts to get information
@@ -48,7 +41,7 @@ export default function ProjectsList()
     let images = data.allFile.nodes
 
     return (
-        <div id = "projects-list" style={projectsListStyle}>
+        <div id = "projects-list" className="flex w-full flex-wrap justify-between">
         {posts.map(post => {
             // Find the image
             let coverImage = images.find(image => post.frontmatter.cover === image.relativePath)

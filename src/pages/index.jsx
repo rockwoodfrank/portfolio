@@ -1,6 +1,5 @@
 import * as React from "react"
 import "../styles/fonts.css"
-import "../styles/global.css";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
