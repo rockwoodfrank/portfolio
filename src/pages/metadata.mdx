@@ -19,6 +19,10 @@ export function Head() {
 }
 
 import demo from "../../media/metadata/demo.gif"
+import homepage from "../../media/metadata/homepage.png"
+import chart from "../../media/metadata/chart.png"
+import map from "../../media/metadata/map.png"
+import ImageBox from "../components/ImageBox"
 
 Originally developed to remove third-party dependencies, the codebase
 I developed collects live data from CCTV cameras located across the district.
@@ -30,11 +34,38 @@ data from two cameras at the same intersection, and combining their data to get 
 record of traffic behavior. This technology is being implemented across the district,
 with the intention to use this data to make safer intersections for all.
 
-<img src={demo} alt="MDemo of Live Map" />
+<ImageBox src={demo} alt="Example Output of Live Map of Detected Objects."/>
 
 # Data Collection
+The metadata parser connects to each camera via an RTSP tunnel through
+ffmpeg, where a metadata channel can usually be found alongside the video 
+stream. I was able to locate these by analyzing the web interface,
+specifically the websockets that are initialized when the site loads.
+
+The XML collected is then constantly parsed using [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser#readme),
+which separates each frame of metadata into a collection of Objects.
+Each camera keeps a list of objects recently detected, where the 
+new data is appended. After an object has not been detected for a long
+time, the object is sent to the local database.
+
+This allows data that is broadcasted from the camera to be stored on
+local servers, removing any dependency on paying for access to the data
+stored on vendor servers.
 
 # Graphs
+Collecting the data into a custom database is great, but it won't be
+useful unless it can be accessed or visualized in an effective way.
+My next step was to develop an application to monitor the program and 
+access data.
+
+<ImageBox src={homepage} alt="The homepage displaying the status of each location."/>
+
+Developed using the [MERN Stack](https://www.mongodb.com/resources/languages/mern-stack),
+
+<ImageBox src={chart} alt=""/>
+
+<ImageBox src={map} alt=""/>
+
 
 # Multi-Camera Collection
 
