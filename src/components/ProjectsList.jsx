@@ -41,7 +41,7 @@ export default function ProjectsList()
     let images = data.allFile.nodes
 
     return (
-        <div id = "projects-list" className="flex w-full flex-wrap justify-between">
+        <div id = "projects-list" className="flex w-full flex-wrap justify-around">
         {posts.map(post => {
             // Find the image
             let coverImage = images.find(image => post.frontmatter.cover === image.relativePath)
