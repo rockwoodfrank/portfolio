@@ -15,7 +15,7 @@ export default function Layout(props) {
 }
 
 export function Head() {
-  return <title>Metadata Collection Interaface | Rockwood Frank</title>
+  return <title>Metadata Collection Interface | Rockwood Frank</title>
 }
 
 import demo from "../../media/metadata/demo.gif"
@@ -30,13 +30,43 @@ data from two cameras at the same intersection, and combining their data to get 
 record of traffic behavior. This technology is being implemented across the district,
 with the intention to use this data to make safer intersections for all.
 
-<img src={demo} alt="MDemo of Live Map" />
+<img src={demo} alt="Demo of Live Map" />
 
 # Data Collection
+The first challenge I faced when developing this was trying to access the stream of metadata.
+The camera's dashboard showed an overlay of the object detection data, so it was obviously there,
+but was it possible to connect to it directly?
+
+After spending a non-insignificant amount of time trying to crack this, I figured that my only 
+option would be to put a script in Chrome that would sit between the connection and the 
+canvas and collect the data as it arrived, creating a JSON file of the collected data every 
+30 seconds or so. It worked, and a Python program would poll for new files and parse the metadata.
+
+But it wasn't a clean solution. Constantly having a Chrome window open with the livestream? The data 
+was accumulating in the heap, causing the page to crash after enough time. Not to mention that you would
+need a different window open for each connected camera, causing unnecessary stress on the GPU.
+
+The program connects to the camera through an RTSP stream managed by ffmpeg. You connect to it
+similar to connecting to a video stream, but with slight differences:
+
+
 
 # Graphs
+The first step towards accessing this data 
+
+# Live Map
+It was about halfway through designing the zone editor that I realized that the map 
+system, if combined with some sort of direct connection to the parser, could display
+the detected objects in real time as they are viewed by the camera.
+
+Aside from the practical application of having verification that the camera is sending 
+data, and that it is being sent properly, I personally think that this is a cool feature
+to develop.
 
 # Multi-Camera Collection
+Okay great. The camera system is working, it's constantly collecting data, sorting by user-specified
+zones, and rendering charts and tables of data with a pretty extensive history of counts and speeds 
+at this point. This is when we installed a second camera 
 
 # Complete intersections
 

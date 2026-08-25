@@ -9,4 +9,10 @@
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-bold);
   }
+  a {
+    color: var(--color-cyan-700)
+  }
+  p {
+    @apply py-3;
+  }
 }

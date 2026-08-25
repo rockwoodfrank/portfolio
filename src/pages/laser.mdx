@@ -1,0 +1,29 @@
+---
+title: "Laser Controller for Cold Atom Trapping"
+slug: "laser"
+cover: "laser/laser.jpeg"
+date: "2026-6-10"
+tags: ["MongoDB", "NodeJS", "React", "XML", "RTSP", "ffmpeg"] 
+repository: "https://github.com/KGAtomTrapLab"
+---
+
+import MdxLayout from "../components/mdx-layout"
+import coverImage from "../../media/laser/laser.jpeg"
+
+export default function Layout(props) {
+  return <MdxLayout {...props} coverImage={coverImage} />
+}
+
+export function Head() {
+  return <title>Laser Controller for Cold Atom Trapping | Rockwood Frank</title>
+}
+
+A part of the [Kat Gillen Cold Atom Research Group](https://sites.google.com/site/gillencoldatomgroup/our-research-projects),
+a digital laser controller was developed to automatically calibrate and correct the wavelength of a laser. Two photodiodes
+track the polarized response of a sample of rubidium-87 to the laser light, and this response is monitored and collected
+by a custom circuit connected to an Arduino Due. The Due then sends the response datasets to a Python program, which 
+in turn sends commands to the laser power supply and a custom-built device used to fine-tune the wavelength.
+The result is a system capable of using large response datasets to calibrate the laser by locating a "good" signal,
+while simultaneously managing user control, allowing for the wavelength to be tuned with a level of precision of 0.01 nanometers.
+
+My complete thesis detailing the project can be found [here](https://github.com/rockwoodfrank/portfolio/tree/main/media/laser/thesis.pdf).

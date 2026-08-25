@@ -5,11 +5,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProjectsList from "../components/ProjectsList";
 
-// Page styles
-const mainStyle = {
-    padding: "0 20px",
-}
-
 const IndexPage = () => {
     useEffect(() => {
         const initAOS = async () => {
@@ -28,7 +23,7 @@ const IndexPage = () => {
     return (
         <>
             <Header />
-            <section style={mainStyle}>
+            <section className="mx-10">
                 <h1>My Projects</h1>
                 <ProjectsList />
             </section>

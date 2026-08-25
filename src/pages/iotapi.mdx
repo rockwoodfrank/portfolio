@@ -8,11 +8,12 @@ repository: "https://github.com/iotapi/iotapi.github.io"
 ---
 
 import MdxLayout from "../components/mdx-layout"
+import coverImage from "../../media/iotapi/iotapi.png"
 
-export default MdxLayout
-
-export function Head() {
-  return <title>Custom Website - Iota Pi Chapter at Cal Poly | Rockwood Frank</title>
+export default function Layout(props) {
+  return <MdxLayout {...props} coverImage={coverImage} />
 }
 
-Hello
+export function Head() {
+  return <title>Custom Website| Rockwood Frank</title>
+}
