@@ -3,7 +3,7 @@ title: "Metadata Collection Interface"
 slug: "metadata"
 cover: "metadata/metadata.png"
 date: "2026-8-21"
-tags: ["MongoDB", "NodeJS", "React", "XML", "RTSP", "ffmpeg"] 
+tags: ["Software Engineering", "MongoDB", "NodeJS", "React"] 
 repository: "https://github.com/iotapi/iotapi.github.io"
 ---
 
@@ -22,7 +22,11 @@ import demo from "../../media/metadata/demo.gif"
 import homepage from "../../media/metadata/homepage.png"
 import chart from "../../media/metadata/chart.png"
 import map from "../../media/metadata/map.png"
+import view_nw from "../../media/metadata/view_nw.png"
+import view_se from "../../media/metadata/view_se.png"
 import ImageBox from "../components/ImageBox"
+import TestComponent from "../components/TestComponent"
+import Animation1 from "../components/Animation1"
 
 Originally developed to remove third-party dependencies, the codebase
 I developed collects live data from CCTV cameras located across the district.
@@ -61,16 +65,44 @@ access data.
 <ImageBox src={homepage} alt="The homepage displaying the status of each location."/>
 
 Developed using the [MERN Stack](https://www.mongodb.com/resources/languages/mern-stack),
+the application allows multiple methods of accessing data in a way that is both
+visually understandable and easy to export to other programs.
 
-<ImageBox src={chart} alt=""/>
+<ImageBox src={chart} alt="Time-series plot of quantities aggregated into five-minute bins."/>
 
-<ImageBox src={map} alt=""/>
+<ImageBox src={map} alt="Live map of detected objects and zone overlays."/>
 
 
 # Multi-Camera Collection
-Okay great. The camera system is working, it's constantly collecting data, sorting by user-specified
-zones, and rendering charts and tables of data with a pretty extensive history of counts and speeds 
-at this point. This is when we installed a second camera 
+All of this is interesting, but not necessarily new. What I've yet to find any research on is the combination
+of this anonymous data from various sources to create a complete representation of intersection behavior.
+Could we put a second camera, facing in the opposite direction, to observe the entire intersection, understanding
+turning movement as well?
+
+I felt that there were two possible ways for this to be implemented:
+1. Synchronizing the frames of data, combining them, and using attributes like position, velocity, and direction
+to combine objects that were believed to be the same thing. 
+{/* TODO: Put first animation here */}
+2. Only focusing on specific behaviors/for each view(eg, looking at the Northbound and Westbound Traffic on Camera 1, and 
+the Southbound and Eastbound Traffic on Camera 2).
+{/* TODO: Basic second animation? */}
+
+I started out trying to implement the first option, but with inconsistent results made worse by spotty network service,
+it wasn't feasible for this style of live parsing.
+
+The second option didn't seem to make a lot of sense initially, but after observing the views of the cameras,
+the solution became more clear.
+
+<ImageBox src={view_nw} alt="Camera 1 looking northwest."/>
+<ImageBox src={view_se} alt="Camera 2 looking southeast."/>
+
+Looking at these viewpoints, it became clear that when a vehicle was approaching a camera, 
+it was possible glean the direction the object was turning by the path it took upon entering 
+the intersection.
+
+{/* <TestComponent />
+<Animation1 /> */}
+
 
 # Complete intersections
 

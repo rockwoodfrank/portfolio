@@ -15,4 +15,8 @@
   p {
     @apply py-3;
   }
+
+  ol {
+    @apply list-decimal pl-5;
+  }
 }
