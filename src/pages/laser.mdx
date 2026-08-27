@@ -3,12 +3,16 @@ title: "Laser Controller for Cold Atom Trapping"
 slug: "laser"
 cover: "laser/laser.jpeg"
 date: "2026-6-10"
-tags: ["MongoDB", "NodeJS", "React", "XML", "RTSP", "ffmpeg"] 
+tags: ["Python", "C++", "Controls", "Physics Research", "Circuit Design"] 
 repository: "https://github.com/KGAtomTrapLab"
 ---
 
 import MdxLayout from "../components/mdx-layout"
+import ImageBox from "../components/ImageBox"
 import coverImage from "../../media/laser/laser.jpeg"
+import diode from "../../media/laser/diode.jpg"
+import collector from "../../media/laser/collector.jpg"
+import response from "../../media/laser/response.jpg"
 
 export default function Layout(props) {
   return <MdxLayout {...props} coverImage={coverImage} />
@@ -17,6 +21,8 @@ export default function Layout(props) {
 export function Head() {
   return <title>Laser Controller for Cold Atom Trapping | Rockwood Frank</title>
 }
+
+import LaserFrame1 from "../components/laser/LaserFrame1"
 
 A part of the [Kat Gillen Cold Atom Research Group](https://sites.google.com/site/gillencoldatomgroup/our-research-projects),
 a digital laser controller was developed to automatically calibrate and correct the wavelength of a laser. Two photodiodes
@@ -27,3 +33,26 @@ The result is a system capable of using large response datasets to calibrate the
 while simultaneously managing user control, allowing for the wavelength to be tuned with a level of precision of 0.01 nanometers.
 
 My complete thesis detailing the project can be found [here](https://github.com/rockwoodfrank/portfolio/tree/main/media/laser/thesis.pdf).
+
+# Objective
+Atom trapping using lasers requires the ability to tune the laser's wavelength to with a very fine
+level of precision. This is complicated by the fact that the wavelength has a tendency to drift
+due to minute factors such as temperature. There are so many factors involved in the calibration,
+in fact, that tuning the laser to a specific wavelength is not a reliable way to get the correct
+response. Instead, the control needs to be based on the response of rubidium to be calibrated correctly.
+
+<LaserFrame1 />
+
+This is a high level overview of the hardware of the controller. 
+We have the open diode laser:
+
+<ImageBox src={diode} alt="780nm Laser used in experiments."/>
+
+As well as the splitter that separates the polarized light, and the 
+two photodiodes measure the signal:
+
+<ImageBox src={collector} alt="Beamsplitter and photodiodes."/>
+
+And a graph of that target response signal captured on a scope:
+
+<ImageBox src={response} alt="Hastily taken photo of oscilloscope output showing the desired response appearing twice."/>

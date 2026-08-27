@@ -22,15 +22,17 @@ export default function Animation1({})
     ]
     useGSAP(() => {
         MorphSVGPlugin.convertToPath("circle");
+        let objectDuration = 5
 
         travelPaths.forEach((path, i) => {
             gsap.timeline({
-                repeat: 20,
+                repeat: 0,
                 yoyo: false,
-                delay: i,
+                delay: objectDuration * i,
+                repeatDelay: objectDuration * travelPaths.length,
                 defaults: { ease: "power1.inOut" }
             }).to(`#traveler-${i}`, {
-                duration: 5,
+                duration: objectDuration,
                 motionPath:{
                     path: `#travel-path-${i}`,
                     align: `#travel-path-${i}`,
@@ -43,21 +45,21 @@ export default function Animation1({})
                 },
                 {
                     drawSVG: "100%",
-                    duration: 5,
+                    duration: objectDuration,
                 }, 0)
         })
 
     })
     return (
         <>
-            <div className="bg-gray-500">
+            <div className="bg-gray-500 relative">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
                     <defs>
                     </defs>
                     {/* Pavement */}
                     <path d="M467.124 147.628L97.6241 296.628L76.1003 166.84L233.258 103.345L467.124 147.628Z" fill="#373737"/>
                     {/* Lines */}
-                    <path d="M97.8863 296.576L166.498 268.855M513.911 154.376L69.1149 353.499M166.498 268.855L113.041 168.579M166.498 268.855L245.772 236.826M245.772 236.826L157.546 150.597M245.772 236.826L305.112 212.851M305.112 212.851L223.282 150.462M305.112 212.851L365.842 188.315M365.842 188.315L465.515 148.044L232.128 104.286M365.842 188.315L253.415 138.288L171.22 131.052L148.813 122.309" stroke="white" stroke-width="4"/>
+                    <path fill="none" d="M97.8863 296.576L166.498 268.855M513.911 154.376L69.1149 353.499M166.498 268.855L113.041 168.579M166.498 268.855L245.772 236.826M245.772 236.826L157.546 150.597M245.772 236.826L305.112 212.851M305.112 212.851L223.282 150.462M305.112 212.851L365.842 188.315M365.842 188.315L465.515 148.044L232.128 104.286M365.842 188.315L253.415 138.288L171.22 131.052L148.813 122.309" stroke="white" stroke-width="4"/>
                     {travelPaths.map((travelPath, i) => 
                         <>
                             <path id={`travel-path-${i}`} d={travelPath} fill="none" stroke="#00FF44" stroke-width="4"/>
@@ -66,6 +68,7 @@ export default function Animation1({})
                         
                     )}
                 </svg>
+                <p className="absolute" style={{top: 400, left: 20}}>Hello</p>
             </div>
         </>
     )
