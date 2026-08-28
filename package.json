@@ -29,9 +29,11 @@
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
     "gsap": "^3.15.0",
+    "konva": "^10.3.2",
     "postcss": "^8.5.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-konva": "^18.2.16",
     "react-player": "^3.4.0",
     "react-scroll": "^1.9.3",
     "tailwindcss": "^4.3.3"
