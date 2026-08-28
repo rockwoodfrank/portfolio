@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Header()
+export default function Header(): React.JSX.Element
 {
     return (
         <>
@@ -9,7 +9,6 @@ export default function Header()
                     <a className="font-bold text-3xl text-white" href="/">Rockwood Frank</a>
                 </div>
             </header>
-            
         </>
    
     )

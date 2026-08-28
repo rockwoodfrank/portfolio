@@ -2,7 +2,7 @@ import * as React from "react"
 /*
     Link that opens in a new tab with a custom icon
 */
-export default function NewTabLink({href, children})
+export default function NewTabLink({href, children}:{href: string, children: React.ReactNode})
 {
     return (
         <a className="inline-flex items-center" href={href} target="blank"> 

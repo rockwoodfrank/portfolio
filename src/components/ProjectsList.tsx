@@ -1,8 +1,15 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import PostPreview from "../components/PostPreview";
+import PostPreview from "./PostPreview";
+import { PostInfo } from "../types/PostInfo"
 
-export default function ProjectsList()
+
+interface GraphImage {
+    relativePath: string,
+    publicURL: string,
+}
+
+export default function ProjectsList(): React.JSX.Element
 {
     // Access all mdx posts to get information
     const data = useStaticQuery(graphql`
@@ -37,14 +44,14 @@ export default function ProjectsList()
     `)
 
     // Direct access
-    let posts = data.allMdx.nodes
-    let images = data.allFile.nodes
+    let posts:PostInfo[] = data.allMdx.nodes
+    let images:GraphImage[] = data.allFile.nodes
 
     return (
         <div id = "projects-list" className="flex w-full flex-wrap justify-around">
-        {posts.map(post => {
+        {posts.map((post) => {
             // Find the image
-            let coverImage = images.find(image => post.frontmatter.cover === image.relativePath)
+            let coverImage = images.find((image: GraphImage) => post.frontmatter.cover === image.relativePath)
             
             return (
             <PostPreview 

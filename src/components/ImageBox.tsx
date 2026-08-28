@@ -4,7 +4,7 @@ import * as React from "react"
     Function for image placed on a post that is centered,
     and has a max width of 80% of full. May include a caption.
 */
-export default function ImageBox({src, alt})
+export default function ImageBox({src, alt} : {src: string, alt: string}): React.JSX.Element
 {
     return (
         <div className="flex flex-col w-full items-center">
