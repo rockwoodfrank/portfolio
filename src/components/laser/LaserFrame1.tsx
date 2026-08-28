@@ -31,8 +31,27 @@ export default function LaserFrame1({})
         //     duration: 1,
         //     ease: "power2.inOut",
         //     repeat: -1,
-        //     yoyo: true,
-        // });
+        //     yoyo true,
+        // });:
+
+        gsap.from(".redResponse, .blueResponse",
+            {
+                drawSVG: "0%",
+                repeat: -1,
+                duration: 2,
+            },
+        )
+
+        // gsap.fromTo(".redResponse",
+        //     {
+        //         drawSVG: "0%"
+        //     },
+        //     {
+        //         drawSVG: "100%",
+        //         duration: 3,
+        //         repeat:-1,
+        //     },
+        // )
     })
 
     return (
@@ -60,8 +79,10 @@ export default function LaserFrame1({})
                 <path d="M661.5 252C661.5 251.724 661.724 251.5 662 251.5L669 251.5C669.215 251.5 669.407 251.638 669.475 251.842L672.475 260.842C672.525 260.994 672.499 261.162 672.405 261.292C672.311 261.422 672.161 261.5 672 261.5L662 261.5C661.724 261.5 661.5 261.276 661.5 261L661.5 252Z" fill="black" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M662.5 252C662.5 251.724 662.276 251.5 662 251.5L655 251.5C654.785 251.5 654.593 251.638 654.525 251.842L651.525 260.842C651.475 260.994 651.501 261.162 651.595 261.292C651.689 261.422 651.839 261.5 652 261.5L662 261.5C662.276 261.5 662.5 261.276 662.5 261L662.5 252Z" fill="black" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M232 220L232 64" stroke="black" stroke-width="6" stroke-linecap="round"/>
-                <path fill="none" d="M232 203C264.809 192.836 266.722 89.7462 291.653 90.0005C320.32 90.293 319.094 185.064 339.973 179.085C360.851 173.106 358.163 154.201 373.975 156.365C396.302 159.422 399.127 192.012 420.505 197.021C429.493 199.127 430.646 194.032 443.77 192.836C456.894 191.64 473 197.021 473 197.021" stroke="#0000FF" stroke-width="6" stroke-linecap="round"/>
-                <path fill="none" d="M276 203C308.716 192.836 310.623 89.7461 335.483 90.0005C364.067 90.2929 362.845 185.064 383.664 179.085C404.483 173.106 401.802 154.201 417.569 156.365C439.832 159.422 442.649 192.012 463.966 197.021C472.928 199.127 473.483 198.814 483 200.608" stroke="#FF0000" stroke-width="6" stroke-linecap="round"/>
+                {/* Blue response */}
+                <path className="blueResponse" fill="none" d="M232 203C264.809 192.836 266.722 89.7462 291.653 90.0005C320.32 90.293 319.094 185.064 339.973 179.085C360.851 173.106 358.163 154.201 373.975 156.365C396.302 159.422 399.127 192.012 420.505 197.021C429.493 199.127 430.646 194.032 443.77 192.836C456.894 191.64 473 197.021 473 197.021" stroke="#0000FF" stroke-width="6" stroke-linecap="round"/>
+                {/* Red response */}
+                <path className="redResponse" fill="none" d="M231 203C247 203 263.5 206.883 276 203C308.716 192.836 310.623 89.7461 335.483 90.0005C364.067 90.2929 362.845 185.064 383.664 179.085C404.483 173.106 401.802 154.201 417.569 156.365C442 159.719 447.8 192.2 473 197" stroke="#FF0000" stroke-width="6" stroke-linecap="round"/>
                 <path d="M207 180L496 180" stroke="black" stroke-width="6" stroke-linecap="round"/>
                 <rect x="513" y="310" width="11" height="62" rx="3" transform="rotate(90 513 310)" fill="white"/>
                 <text x="300" y="220">Response</text>
