@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[569],{6569:function(o,e,f){f.r(e)}}]);
