@@ -1,0 +1,113 @@
+---
+title: "Galaxy Collision Simulation Engine"
+slug: "galaxy"
+cover: "galaxy/galaxy.jpeg"
+date: "2025-5-08"
+tags: ["Python", "2D Simulation", "Barnes-Hut Tree", "Euler Method"] 
+repository: "https://github.com/rockwoodfrank/galaxy-collision-simulation"
+---
+
+import MdxLayout from "../components/mdx-layout"
+import ImageBox from "../components/ImageBox"
+
+import coverImage from "../../media/galaxy/galaxy.jpeg"
+import demo from "../../media/galaxy/demo.gif"
+
+export default function Layout(props) {
+  return <MdxLayout {...props} coverImage={coverImage} />
+}
+
+export function Head() {
+  return <title>Galaxy Collision Simulation Engine | Rockwood Frank</title>
+}
+
+# Galaxy Collision Simulation Engine
+Using a Barnes-Hut algorithm to simulate multi-body particle interactions in gravity,
+this program creates simulations multiple galaxies and their interactions over time. 
+The program randomly places up to 100,000 particles around a center point of each galaxy,
+and its next position is calculated with the Euler method.
+
+## Rendered Demo
+
+<ImageBox src={demo} alt="Simulation of 100,000 Particles in 2 Galaxies." />
+
+## Initial Implementation
+To begin this, I started a 5 particle simulation given to me with the assignment,
+and modified the code to support than 5 particles. I
+also created a Particle class in the hopes of improving programming efficiency. Once I could
+simulate multiple particles, I wanted to try creating two small clusters of particles with only around
+10 particles each. This was tricky, as I was manually setting weights and velocities and the particles
+would often fall to the center or fly off. I eventually added a center mass that was much heavier than
+the other particles, as this was the only way to keep the particles in place.
+
+At this point, I tried to assign the particles a more circular location, by assigning them a
+random radius and angle instead of an x and a y, but then converting those values into rectangular
+coordinates. I then spent too much time trying to make a more optimal rotational velocity, by adding a
+tangential velocity that would increase as it got closer to the center.
+
+Once I had this implemented, I tried working around one hundred particles. I noticed that
+my computer could no longer simulate in real time and needed to implement some sort of structure
+to improve efficiency.
+
+## Grid Implementation - Additional CPU Cost
+My original plan was to implement the 1024x1024 grid structure. I was a bit confused about
+its implementation because it would add around 100,000 objects and that many calculations to the
+grid for each calculation. I tried to implement it, which is shown in my grid.py function. It first
+calculates the inner forces within each particle, and then the center of mass of each grid square.
+Then it grabs the other centers of masses and calculates an average force based on that value. The
+issue with this implementation was that the time that it took to calculate each grid's center of mass
+felt like it was much higher, and added a lot of time to my simulation. I also encountered a strange
+issue where the orbiting bodies would be “pulled” by my center masses much more than they
+should have been, and would create an inaccurate collision simulation.
+
+## Barnes-Hut Tree
+I decided that for my computer, the most efficient implementation would be a Barnes-Hut
+tree, so I tried to implement this using the diagrams from the assignment. In an attempt to improve efficiency, I
+tried to implement a function where upon an update to a particle's location, it would determine if it
+was out of bounds of its parent, upon which it would remove itself and its center of mass from the
+tree. However, I had a lot of trouble implementing this and was struggling to get it to work. I was
+having issues with divide by zero errors as well as the grids not working properly, and was also
+struggling with the time complexity as I scaled up the number of squares.
+
+I did some more research on the Barnes-Hut Tree and I found an [article written by Tom
+Ventimiglia & Kevin Wayne](https://arborjs.org/docs/barnes-hut), who described the Tree in more detail. With this implementation, I
+was able to create the simulation included in this project.
+
+The article discusses the idea of a calculation threshold, theta, that determines when to
+recurse down the tree for calculations and when to stop and use an average center of mass. This is
+based on the width of the parent square divided by the distance of the object. A theta of 0.5 is
+standard, and zero is equivalent to brute force calculations.
+
+One thing that I was unsure about while creating this was how I would implement the
+updating of the tree. I had repeatedly tried restructuring and recalculating tree data on updates, but
+this never really seemed to work. From research I found online, it seemed that the best option was
+to simply tear down and rebuild the tree for each frame.
+
+## Processing Speed
+Compared to brute force implementation initially, my implementation has significant
+speedups. It is able to calculate the positions in the realm of thousands of particles about multiple
+times faster than the brute force implementation. However, the processing time is still very high, in
+the range of several hours, when hundreds of thousands of calculations are made, even with a higher
+value set for theta. If I could split up the task, and use the multiple cores on my CPU, then I could
+probably make the program run much faster, but attempting to implement caused multiple errors in Python.
+While I did eventually make my completed implementations, I would be happy to
+know how I could improve this programs efficiency in any way.
+
+## Key Files to Look At
+- **100k-Final.mp4** - This is my final implementation of 100,000 particles. It's a little long, but
+you can see the multiple collisions of the centers and how the particles spread out.
+- **MultipleParticles_bh-new.py** - This is the code that finally got the implementation
+working. Note the setup and teardown of the tree on each update. You can test it quickly by
+changing the “num_particles” property to a number less than a thousand(must be divisible
+by 2) and having it run.
+- **newTree.py** - This is the Barnes Hut tree that I got to work the best, and would simulate the
+most faithfully.
+- **Particles.py** - This file holds all of the particle classes used in the simulation. Each center
+mass was a standard particle, but the orbiting particles were StarParticles that had special
+functions to give them random positions around the center.
+- **Other Files** - Other videos and python files included show previous or unsuccessful
+iterations of the project. You can see the various tree files that couldn't simulate the particle
+positions properly, as well as my grid calculations and how they added a lot of time.
+
+
+Cover Image: By NASA, H. Ford (JHU), G. Illingworth (UCSC/LO), M.Clampin (STScI), G. Hartig (STScI), the ACS Science Team, and ESA - <a rel="nofollow" class="external text" data-mw-original-href="http://antwrp.gsfc.nasa.gov/apod/ap040612.html" href="https://antwrp.gsfc.nasa.gov/apod/ap040612.html">APOD 2004-06-12</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=539276">Link</a>
