@@ -5,7 +5,7 @@ cover: "laser/laser.jpeg"
 date: "2026-6-10"
 tags: ["Python", "C++", "Controls", "Physics Research", "Circuit Design"] 
 repository: "https://github.com/KGAtomTrapLab"
-hidden: "false"
+hidden: false
 ---
 
 import MdxLayout from "../components/mdx-layout"
@@ -65,7 +65,23 @@ The lasers used in this experiment have a wavelength a few nanometers longer tha
 resonant frequency of rubidium, which is about 790 nm. To account for this, each laser
 diode is placed within a chamber with a diffraction grating at the end.
 
-{/* This grating reflects 
+This grating diffracts the laser light based on its wavelength, and a portion of this
+light is reflected into the diode, changing the output wavelength of the light.
+By changing the position from which light reflects back into the laser, it is
+possible to modify the output laser wavelength.
 
-<Grating /> */}
+To change the grating position, then, the reflector is attached to a piezoelectric
+that moves the reflector very slightly with different voltages.
+
+The initial digital controller, then, increments the piezoelectric voltage over a set 
+time, creating a voltage "ramp".
+
+With the ramp, it now becomes possible to set the laser to a wavelength capable of exciting 
+Rubidium, but this is not useful unless we can view the response from the rubidium.
+
+Before entering the experiment, a small portion of the beam is split and sent to a sample 
+chamber.
+{/* 
+# The Rubidium Sample
+The  */}
 

@@ -47,7 +47,7 @@ export default function ProjectsList(): React.JSX.Element
     // Direct access
     let posts:PostInfo[] = data.allMdx.nodes
     // Filter to remove hidden posts
-    let filteredPosts = posts.filter(post => post.frontmatter.hidden != "true")
+    let filteredPosts = posts.filter(post => post.frontmatter.hidden != true)
     let images:GraphImage[] = data.allFile.nodes
 
     return (
