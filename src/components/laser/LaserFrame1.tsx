@@ -107,10 +107,12 @@ export default function LaserFrame1({})
                 <path className="blueResponse" clipPath="url(#graphClip)" fill="none" d="M232 203C264.809 192.836 266.722 89.7462 291.653 90.0005C320.32 90.293 319.094 185.064 339.973 179.085C360.851 173.106 358.163 154.201 373.975 156.365C396.302 159.422 399.127 192.012 420.505 197.021C429.493 199.127 430.646 194.032 443.77 192.836C456.894 191.64 473 197.021 473 197.021" stroke="#0000FF" stroke-width="6" stroke-linecap="round"/>
                 {/* Red response */}
                 <path className="redResponse" clipPath="url(#graphClip)" fill="none" d="M231 203C247 203 263.5 206.883 276 203C308.716 192.836 310.623 89.7461 335.483 90.0005C364.067 90.2929 362.845 185.064 383.664 179.085C404.483 173.106 401.802 154.201 417.569 156.365C442 159.719 447.8 192.2 473 197" stroke="#FF0000" stroke-width="6" stroke-linecap="round"/>
+                {/* Rotating diffractor */}
+                <path d="M110.254 428.804L47.8181 366.962L109.745 304.61L99.2928 294.25L27.0909 367.047L99.8878 439.249L110.254 428.804ZM39.0246 372.998C35.711 373.011 33.0137 370.336 33.0001 367.023C32.9865 363.709 35.6617 361.012 38.9754 360.998C42.2891 360.984 44.9864 363.66 45 366.973C45.0136 370.287 42.3383 372.984 39.0246 372.998Z" fill="#535353"/>
                 <path d="M207 180L496 180" stroke="black" stroke-width="6" stroke-linecap="round"/>
                 <rect x="513" y="310" width="11" height="62" rx="3" transform="rotate(90 513 310)" fill="white"/>
                 <text x="300" y="220">Response</text>
-                <text x="125" y="375">Laser Diode</text>
+                <text x="125" y="360">Laser Diode</text>
                 <text x="450" y="375">Rubidium Sample</text>
             </svg>
         </div>

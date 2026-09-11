@@ -9,6 +9,7 @@ repository: "https://github.com/KGAtomTrapLab"
 
 import MdxLayout from "../components/mdx-layout"
 import ImageBox from "../components/ImageBox"
+
 import coverImage from "../../media/laser/laser.jpeg"
 import diode from "../../media/laser/diode.jpg"
 import collector from "../../media/laser/collector.jpg"
@@ -23,7 +24,7 @@ export function Head() {
 }
 
 import LaserFrame1 from "../components/laser/LaserFrame1"
-import TestCanvas from "../components/laser/TestCanvas"
+import Grating from "../components/laser/Grating"
 
 A part of the [Kat Gillen Cold Atom Research Group](https://sites.google.com/site/gillencoldatomgroup/our-research-projects),
 a digital laser controller was developed to automatically calibrate and correct the wavelength of a laser. Two photodiodes
@@ -57,3 +58,13 @@ two photodiodes measure the signal:
 And a graph of that target response signal captured on a scope:
 
 <ImageBox src={response} alt="Hastily taken photo of oscilloscope output showing the desired response appearing twice."/>
+
+# The Ramp Controller
+The lasers used in this experiment have a wavelength a few nanometers longer than the 
+resonant frequency of rubidium, which is about 790 nm. To account for this, each laser
+diode is placed within a chamber with a diffraction grating at the end.
+
+{/* This grating reflects 
+
+<Grating /> */}
+
