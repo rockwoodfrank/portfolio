@@ -21,7 +21,9 @@ export default function MdxLayout({ children, pageContext, coverImage }: {childr
                     <h1 className="py-2">{pageContext.frontmatter.title}</h1>
                     <p><strong>Date of Project Completion:</strong> {pageContext.frontmatter.date}</p>
                     <TagsDisplay tags={pageContext.frontmatter.tags} />
-                    <p><NewTabLink href={pageContext.frontmatter.repository}>View Project</NewTabLink></p>
+                    {pageContext.frontmatter.repository != "none" && 
+                        <p><NewTabLink href={pageContext.frontmatter.repository}>View Project</NewTabLink></p>
+                    }
                 </div>
                 {children}
             </div>

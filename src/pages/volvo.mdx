@@ -1,0 +1,147 @@
+---
+title: "A Collection of Resources that I Found Incredibly Helpful When Maintaining my 2007 Volvo XC90"
+slug: "volvo"
+cover: "volvo/volvo.jpeg"
+date: "2026-9-10"
+tags: ["Random", "Shop Work"] 
+repository: "none"
+hidden: "true"
+---
+
+import MdxLayout from "../components/mdx-layout"
+import ImageBox from "../components/ImageBox"
+import NewTabLink from "../components/NewTabLink"
+import YoutubeVideo from "../components/YoutubeVideo"
+
+import coverImage from "../../media/volvo/volvo.jpeg"
+
+export default function Layout(props) {
+  return <MdxLayout {...props} coverImage={coverImage} />
+}
+
+export function Head() {
+  return <title>Volvo XC90 Resources | Rockwood Frank</title>
+}
+
+I inherited my family's old Volvo XC90 V8 with about 230,000 miles 
+on it(mostly highway, thankfully). I'm convinced it still has a lot of life left in it,
+despite the spotty repair schedule.
+
+I have had some issues, however, and have been trying to make repairs to increase its life
+for as long as possible. 
+
+There are lots of great repair tutorials across the internet, but they're often hard to 
+find or not perfectly specific.
+
+Thus, this page is my attempt to curate all of the guides, tools, and resources that I found
+incredibly helpful when getting this car to work again.
+
+**DISCLAIMER: I am not a mechanic. My experience working on cars is limited. 
+Additionally, these resources may not be perfectly accurate, they 
+were just helpful for me. If you're unsure about something, talk to a mechanic first.**
+
+## Online Resources
+First of all, the SwedeSpeed forums is a community full of people with experience with Volvos.
+The forum for the 1st Edition XC90:
+- <NewTabLink href="https://www.swedespeed.com/forums/xc90-2003-2014.27/">XC90(2003 - 2014) | SwedeSpeed</NewTabLink> 
+
+Is a great place to start when looking at repairs. Many of the guides I've linked here for reference.
+
+For parts, IPD has great listings for OEM and aftermarket:
+- <NewTabLink href="https://www.ipdusa.com/">www.ipdusa.com</NewTabLink>
+
+In addition, check your local dealership to see if you can pick up parts there:
+- <NewTabLink href="https://usparts.volvocars.com/">usparts.volvocars.com</NewTabLink>
+
+I've found that local dealerships will usually sell parts below MSRP. I will 
+always prefer to buy OEM because I got scammed when buying aftermarket coils,
+and it feels like the safer option to just purchase parts from a reputable location.
+
+## Tools
+### V-Tool
+Volvo's official tool for diagnosis and modifications is VIDA, which seems great but getting a license
+as a non-mechanic has been difficult. Instead, what I've found to be incredibly helpful is V-Tool:
+- <NewTabLink href="https://v-tool.app/">v-tool.app</NewTabLink>
+
+Which can be downloaded from the Google or iOS App Store.
+The main features are free, but you have to pay a one-time fee for more advanced functionality
+such as resetting the transmission counter.
+
+To interface with the app, you'll need a bluetooth OBD adapter. Only certain kinds will work, so
+check their website for their recommendations.
+
+### OBD Adapter
+Personally, I bought a **vLinker FD+** because it was recommended by V-Tool and it might have
+been the cheapest option. It's been working great so far. You can buy it on Amazon at the time of 
+writing this.
+
+## Diagnoses
+### "Slow Down or Shift Up Message"
+This happened to me, accompanied by a flashing Check Engine light:
+
+<YoutubeVideo link="https://www.youtube.com/embed/LHcMvfoOD6U?si=QCv6Lcme3-vsV4hG" orientation="horizontal" />
+
+A mechanic diagnosed that there 6 of the 8 ignition coils were behaving improperly, so I replaced 6 coils instead 
+of just the one like in the video.
+
+I bought OEM coils, I got scammed with the first set of aftermarket coils that I bought and decided not to risk it 
+again.
+
+### Turn Signal Intermittent
+This tutorial worked great for me:
+- <NewTabLink href="https://www.swedespeed.com/threads/solution-to-intermittent-turn-signal-problem.62179/">
+    Solution to Turn Signal Problem
+    </NewTabLink>
+
+Though the issue came back a few months later. Might need to do it again.
+
+### Instantaneous MPG Not Showing Up
+For me, my fuel pressure sensor needed replacing. It was a pretty easy repair. 
+The tutorial I followed is in the list of repairs below.
+
+## Repairs
+### Spark Plug Replacement
+The rear-side spark plugs are really hard to get to. I recommend a set of very long socket extenders
+before you get started.
+
+<YoutubeVideo link="https://www.youtube.com/embed/cSSjwAKNsHc?si=0mWb6VkbIOj1vh5t" orientation="horizontal" />
+
+### Fuel Pressure Sensor
+I bought a BOSCH aftermarket fuel pressure sensor from IPD and did this repair, it's been running 
+great since. Now I'm constantly reminded how inefficient this car is :(
+
+<YoutubeVideo link="https://www.youtube.com/embed/jJHgBNgbSl0?si=6p8UF0qyRmvulSIY" orientation="horizontal" />
+
+### Transmission Fluid Flush
+Before I did the repair the transmission fluid had *never* been flushed. I noticed that I had some trouble
+shifting, and decided that I had better replace it before things got worse. I had heard rumors online that
+flushing the fluid could break the transmission after this much time(I have no idea if this true), but 
+I figured that it was better for it to break down at home rather than halfway through a long road trip.
+
+- <NewTabLink href="https://www.swedespeed.com/threads/how-to-xc90-6-speed-transmission-fluid-flush.204760/">
+    How To: XC90 6-speed transmission fluid flush
+    </NewTabLink>
+
+This tutorial was great. I bought fluid from the dealership since I didn't want to add any uncertainty.
+
+Be super precise with the fluid level, I originally added too much and I got a "Low Oil Level" message
+after driving for a mile or two(yes, a low oil message for too much oil), so then I took out too much,
+and finally added the right amount back. The V-Tool app would have been incredibly helpful for getting 
+the right temperature for setting at the time.
+
+### Fuel Filter
+This is a pretty easy repair, you don't even need to lift the car to easily access the filter.
+
+<YoutubeVideo link="https://www.youtube.com/embed/ovc5m8RJx5M?si=WUhf6bTwW8DqbjPx" orientation="horizontal" />
+
+## Repairs I'd Like to Do
+I'm still working on some repairs, doing them when I can afford it and I've done enough research. Right now,
+my list includes:
+- Replacing the Front/Rear Differential Fluid
+- Replacing the AWD(Haldex) Fluid/Filter
+- Replacing Power Steering Fluid
+- Figuring out how to fix the broken daylight sensor
+- Replacing the burnt out lights behind the center console buttons
+- Installing a trailer hitch
+
+For questions or comments, reach out!

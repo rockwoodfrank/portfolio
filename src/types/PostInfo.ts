@@ -6,5 +6,6 @@ export interface PostInfo {
         date: string,
         tags: string[],
         repository: string,
+        hidden: string,
     }
 }

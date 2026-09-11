@@ -23,6 +23,7 @@ export default function ProjectsList(): React.JSX.Element
                     slug
                     cover
                     tags
+                    hidden
                 }
                 internal {
                     contentFilePath
@@ -45,11 +46,13 @@ export default function ProjectsList(): React.JSX.Element
 
     // Direct access
     let posts:PostInfo[] = data.allMdx.nodes
+    // Filter to remove hidden posts
+    let filteredPosts = posts.filter(post => post.frontmatter.hidden != "true")
     let images:GraphImage[] = data.allFile.nodes
 
     return (
         <div id = "projects-list" className="flex w-full flex-wrap justify-around">
-        {posts.map((post) => {
+        {filteredPosts.map((post) => {
             // Find the image
             let coverImage = images.find((image: GraphImage) => post.frontmatter.cover === image.relativePath)
             
